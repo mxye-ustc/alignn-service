@@ -1,0 +1,6 @@
+filename,natoms,formula,jv_formation_energy_peratom_alignn,jv_optb88vdw_total_energy_alignn,jv_ehull_alignn,jv_optb88vdw_bandgap_alignn,jv_bulk_modulus_kv_alignn,jv_magmom_oszicar_alignn,mp_e_form_alignn,mp_gappbe_alignn,total_time_s
+LFP_pure_1x1x1.poscar,28,LiFePO4,-2.069813,-5.231997,2.638084,0.05774,92.307076,8.912446,-2.532185,3.693822,1.19
+LFP_pure_2x2x1.poscar,112,LiFePO4,-2.068274,-5.22917,2.639068,0.05149,91.85183,8.887712,-2.531645,3.721795,1.43
+LFP_pure_3x3x2.poscar,504,LiFePO4,-2.067828,-5.230226,2.642254,0.052535,92.051064,8.904164,-2.530689,3.724126,5.66
+LFP_pure_4x2x2.poscar,448,LiFePO4,-2.067949,-5.228518,2.638971,0.050382,91.773293,8.883038,-2.531538,3.728041,5.01
+LFP_pure_8x6x3.poscar,4032,LiFePO4,-2.067669,-5.228291,2.63767,0.051027,91.758827,8.876237,-2.531436,3.728514,98.29

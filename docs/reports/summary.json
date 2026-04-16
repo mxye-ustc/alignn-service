@@ -1,0 +1,191 @@
+{
+  "generation_info": {
+    "timestamp": "2026-04-03 09:25:36",
+    "version": "4.0",
+    "note": "文献优化版，覆盖有实验验证的掺杂浓度区间",
+    "supercell": {
+      "nx": 8,
+      "ny": 6,
+      "nz": 3,
+      "multiplier": 144
+    },
+    "n_total": 576,
+    "n_range": {
+      "min": 1,
+      "max": 10
+    },
+    "concentration_range": {
+      "min": 0.1736111111111111,
+      "max": 1.7361111111111112
+    },
+    "concentration_step_pct": 0.1736111111111111,
+    "configs_per_concentration": 3,
+    "n_workers": 9,
+    "generation_time_seconds": 1.2
+  },
+  "literature_reference": {
+    "concentration_range_design": "0.17% ~ 1.74%",
+    "literature_range": "0.1% ~ 5.0%（<3%居多）",
+    "industrial_range": "~0.5% ~ 2.0% (Ti掺杂)",
+    "alignment": "高度吻合，有大量文献验证"
+  },
+  "doping_elements_literature": {
+    "Li": {
+      "elements": [
+        "Na",
+        "Mg",
+        "Al",
+        "Ti",
+        "W"
+      ],
+      "note": "Ti是产业化主流，W/Nb是2002年开创性工作"
+    },
+    "Fe": {
+      "elements": [
+        "Ti",
+        "V",
+        "Cr",
+        "Mn",
+        "Co",
+        "Ni",
+        "Cu",
+        "Zn",
+        "Mo",
+        "Nb",
+        "Er",
+        "Y",
+        "Nd"
+      ],
+      "note": "包含13种元素，其中Er/Y/Nd是稀土掺杂（电导率提高4个数量级）"
+    },
+    "P": {
+      "elements": [
+        "Si",
+        "S"
+      ],
+      "note": "Si+F共掺可提高2-3个数量级"
+    }
+  },
+  "summary": {
+    "total_structures": 600,
+    "fe_sites": 576,
+    "li_sites": 576,
+    "p_sites": 576,
+    "atoms_per_supercell": 4032
+  },
+  "by_site": {
+    "Fe": {
+      "count": 390,
+      "dopants": [
+        "Mn",
+        "Co",
+        "Ni",
+        "Cu",
+        "Zn",
+        "Mo",
+        "Nb",
+        "Ti",
+        "V",
+        "Cr",
+        "Er",
+        "Y",
+        "Nd"
+      ]
+    },
+    "Li": {
+      "count": 150,
+      "dopants": [
+        "Na",
+        "Mg",
+        "Al",
+        "Ti",
+        "W"
+      ]
+    },
+    "P": {
+      "count": 60,
+      "dopants": [
+        "Si",
+        "S"
+      ]
+    }
+  },
+  "by_dopant": {
+    "Mn": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Co": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Ni": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Cu": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Zn": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Mo": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Nb": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Ti": {
+      "count": 60,
+      "site": "Fe"
+    },
+    "V": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Cr": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Na": {
+      "count": 30,
+      "site": "Li"
+    },
+    "Mg": {
+      "count": 30,
+      "site": "Li"
+    },
+    "Al": {
+      "count": 30,
+      "site": "Li"
+    },
+    "Er": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Y": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "Nd": {
+      "count": 30,
+      "site": "Fe"
+    },
+    "W": {
+      "count": 30,
+      "site": "Li"
+    },
+    "Si": {
+      "count": 30,
+      "site": "P"
+    },
+    "S": {
+      "count": 30,
+      "site": "P"
+    }
+  }
+}

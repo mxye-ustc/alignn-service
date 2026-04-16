@@ -1,0 +1,72 @@
+[
+  {
+    "filename": "LFP_pure_1x1x1.poscar",
+    "natoms": 28,
+    "formula": "LiFePO4",
+    "jv_formation_energy_peratom_alignn": -2.069813,
+    "jv_optb88vdw_total_energy_alignn": -5.231997,
+    "jv_ehull_alignn": 2.638084,
+    "jv_optb88vdw_bandgap_alignn": 0.05774,
+    "jv_bulk_modulus_kv_alignn": 92.307076,
+    "jv_magmom_oszicar_alignn": 8.912446,
+    "mp_e_form_alignn": -2.532185,
+    "mp_gappbe_alignn": 3.693822,
+    "total_time_s": 1.19
+  },
+  {
+    "filename": "LFP_pure_2x2x1.poscar",
+    "natoms": 112,
+    "formula": "LiFePO4",
+    "jv_formation_energy_peratom_alignn": -2.068274,
+    "jv_optb88vdw_total_energy_alignn": -5.22917,
+    "jv_ehull_alignn": 2.639068,
+    "jv_optb88vdw_bandgap_alignn": 0.05149,
+    "jv_bulk_modulus_kv_alignn": 91.85183,
+    "jv_magmom_oszicar_alignn": 8.887712,
+    "mp_e_form_alignn": -2.531645,
+    "mp_gappbe_alignn": 3.721795,
+    "total_time_s": 1.43
+  },
+  {
+    "filename": "LFP_pure_3x3x2.poscar",
+    "natoms": 504,
+    "formula": "LiFePO4",
+    "jv_formation_energy_peratom_alignn": -2.067828,
+    "jv_optb88vdw_total_energy_alignn": -5.230226,
+    "jv_ehull_alignn": 2.642254,
+    "jv_optb88vdw_bandgap_alignn": 0.052535,
+    "jv_bulk_modulus_kv_alignn": 92.051064,
+    "jv_magmom_oszicar_alignn": 8.904164,
+    "mp_e_form_alignn": -2.530689,
+    "mp_gappbe_alignn": 3.724126,
+    "total_time_s": 5.66
+  },
+  {
+    "filename": "LFP_pure_4x2x2.poscar",
+    "natoms": 448,
+    "formula": "LiFePO4",
+    "jv_formation_energy_peratom_alignn": -2.067949,
+    "jv_optb88vdw_total_energy_alignn": -5.228518,
+    "jv_ehull_alignn": 2.638971,
+    "jv_optb88vdw_bandgap_alignn": 0.050382,
+    "jv_bulk_modulus_kv_alignn": 91.773293,
+    "jv_magmom_oszicar_alignn": 8.883038,
+    "mp_e_form_alignn": -2.531538,
+    "mp_gappbe_alignn": 3.728041,
+    "total_time_s": 5.01
+  },
+  {
+    "filename": "LFP_pure_8x6x3.poscar",
+    "natoms": 4032,
+    "formula": "LiFePO4",
+    "jv_formation_energy_peratom_alignn": -2.067669,
+    "jv_optb88vdw_total_energy_alignn": -5.228291,
+    "jv_ehull_alignn": 2.63767,
+    "jv_optb88vdw_bandgap_alignn": 0.051027,
+    "jv_bulk_modulus_kv_alignn": 91.758827,
+    "jv_magmom_oszicar_alignn": 8.876237,
+    "mp_e_form_alignn": -2.531436,
+    "mp_gappbe_alignn": 3.728514,
+    "total_time_s": 98.29
+  }
+]

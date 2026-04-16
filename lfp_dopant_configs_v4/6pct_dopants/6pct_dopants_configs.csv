@@ -1,0 +1,19 @@
+config_id,doping_site,dopant,n_dopant_atoms,concentration_pct,supercell,formula,n_atoms,poscar_path
+LFP_Fe=Sc_6pct_n1_2x2x1,Fe,Sc,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Sc1,112,poscar_files/LFP_Fe=Sc_6pct_n1_2x2x1.poscar
+LFP_Fe=Ti_6pct_n1_2x2x1,Fe,Ti,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Ti1,112,poscar_files/LFP_Fe=Ti_6pct_n1_2x2x1.poscar
+LFP_Fe=V_6pct_n1_2x2x1,Fe,V,1,6.25,"[2, 2, 1]",Fe15Li16O64P16V1,112,poscar_files/LFP_Fe=V_6pct_n1_2x2x1.poscar
+LFP_Fe=Cr_6pct_n1_2x2x1,Fe,Cr,1,6.25,"[2, 2, 1]",Cr1Fe15Li16O64P16,112,poscar_files/LFP_Fe=Cr_6pct_n1_2x2x1.poscar
+LFP_Fe=Mn_6pct_n1_2x2x1,Fe,Mn,1,6.25,"[2, 2, 1]",Fe15Li16Mn1O64P16,112,poscar_files/LFP_Fe=Mn_6pct_n1_2x2x1.poscar
+LFP_Fe=Co_6pct_n1_2x2x1,Fe,Co,1,6.25,"[2, 2, 1]",Co1Fe15Li16O64P16,112,poscar_files/LFP_Fe=Co_6pct_n1_2x2x1.poscar
+LFP_Fe=Ni_6pct_n1_2x2x1,Fe,Ni,1,6.25,"[2, 2, 1]",Fe15Li16Ni1O64P16,112,poscar_files/LFP_Fe=Ni_6pct_n1_2x2x1.poscar
+LFP_Fe=Cu_6pct_n1_2x2x1,Fe,Cu,1,6.25,"[2, 2, 1]",Cu1Fe15Li16O64P16,112,poscar_files/LFP_Fe=Cu_6pct_n1_2x2x1.poscar
+LFP_Fe=Zn_6pct_n1_2x2x1,Fe,Zn,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Zn1,112,poscar_files/LFP_Fe=Zn_6pct_n1_2x2x1.poscar
+LFP_Fe=Y_6pct_n1_2x2x1,Fe,Y,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Y1,112,poscar_files/LFP_Fe=Y_6pct_n1_2x2x1.poscar
+LFP_Fe=Zr_6pct_n1_2x2x1,Fe,Zr,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Zr1,112,poscar_files/LFP_Fe=Zr_6pct_n1_2x2x1.poscar
+LFP_Fe=Nb_6pct_n1_2x2x1,Fe,Nb,1,6.25,"[2, 2, 1]",Fe15Li16Nb1O64P16,112,poscar_files/LFP_Fe=Nb_6pct_n1_2x2x1.poscar
+LFP_Fe=Mo_6pct_n1_2x2x1,Fe,Mo,1,6.25,"[2, 2, 1]",Fe15Li16Mo1O64P16,112,poscar_files/LFP_Fe=Mo_6pct_n1_2x2x1.poscar
+LFP_Fe=Ru_6pct_n1_2x2x1,Fe,Ru,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Ru1,112,poscar_files/LFP_Fe=Ru_6pct_n1_2x2x1.poscar
+LFP_Fe=Rh_6pct_n1_2x2x1,Fe,Rh,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Rh1,112,poscar_files/LFP_Fe=Rh_6pct_n1_2x2x1.poscar
+LFP_Fe=Pd_6pct_n1_2x2x1,Fe,Pd,1,6.25,"[2, 2, 1]",Fe15Li16O64P16Pd1,112,poscar_files/LFP_Fe=Pd_6pct_n1_2x2x1.poscar
+LFP_Fe=Ag_6pct_n1_2x2x1,Fe,Ag,1,6.25,"[2, 2, 1]",Ag1Fe15Li16O64P16,112,poscar_files/LFP_Fe=Ag_6pct_n1_2x2x1.poscar
+LFP_Fe=Cd_6pct_n1_2x2x1,Fe,Cd,1,6.25,"[2, 2, 1]",Cd1Fe15Li16O64P16,112,poscar_files/LFP_Fe=Cd_6pct_n1_2x2x1.poscar

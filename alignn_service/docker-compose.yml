@@ -1,0 +1,137 @@
+# ALIGNN 预测服务 Docker Compose 配置
+# 适用于腾讯云 4核CPU + 4GB内存 + CBS云盘
+
+version: "3.8"
+
+services:
+  # ========== API 服务 ==========
+  api:
+    build:
+      context: ..
+      dockerfile: alignn_service/Dockerfile
+    container_name: alignn-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=false
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=sqlite:///./alignn_service.db
+      - MODEL_BASE_DIR=/models
+      - UPLOAD_DIR=/data/uploads
+      - RESULTS_DIR=/data/results
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-change-in-production}
+      - MAX_CONCURRENT_PREDICTIONS=1
+    volumes:
+      - ../data/uploads:/data/uploads
+      - ../data/results:/data/results
+      - model_data:/models
+    depends_on:
+      - redis
+    networks:
+      - alignn-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ========== Celery Worker ==========
+  worker:
+    build:
+      context: ..
+      dockerfile: alignn_service/Dockerfile
+    container_name: alignn-worker
+    restart: unless-stopped
+    command: celery -A alignn_service.core.tasks celery_app worker --loglevel=info --concurrency=1
+    environment:
+      - DEBUG=false
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=sqlite:///./alignn_service.db
+      - MODEL_BASE_DIR=/models
+      - UPLOAD_DIR=/data/uploads
+      - RESULTS_DIR=/data/results
+    volumes:
+      - ../data/uploads:/data/uploads
+      - ../data/results:/data/results
+      - model_data:/models
+    depends_on:
+      - redis
+    networks:
+      - alignn-network
+    deploy:
+      resources:
+        limits:
+          memory: 3500M
+        reservations:
+          memory: 2000M
+
+  # ========== Redis 缓存 ==========
+  redis:
+    image: redis:7-alpine
+    container_name: alignn-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - alignn-network
+    command: redis-server --maxmemory 512mb --maxmemory-policy allkeys-lru
+
+  # ========== Streamlit Web UI (可选) ==========
+  ui:
+    build:
+      context: ..
+      dockerfile: alignn_service/Dockerfile
+    container_name: alignn-ui
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=true
+      - API_BASE_URL=http://api:8000
+    depends_on:
+      - api
+    networks:
+      - alignn-network
+    volumes:
+      - ../data/uploads:/data/uploads
+      - ../data/results:/data/results
+
+  # ========== Nginx 反向代理 (可选) ==========
+  nginx:
+    image: nginx:alpine
+    container_name: alignn-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - api
+      - ui
+    networks:
+      - alignn-network
+    profiles:
+      - production
+
+# ========== 网络 ==========
+networks:
+  alignn-network:
+    driver: bridge
+
+# ========== 存储卷 ==========
+volumes:
+  redis_data:
+    driver: local
+  model_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/cbs/models  # CBS 云盘挂载点

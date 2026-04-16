@@ -1,0 +1,22 @@
+[tool.run]
+timeout = 300
+
+[tool.streamlit]
+server.headless = true
+server.port = 8501
+server.baseUrlPath = ""
+server.enableCORS = false
+server.enableXsrfProtection = true
+browser.gatherUsageStats = false
+
+[browser]
+serverAddress = "localhost"
+gatherUsageStats = false
+
+[runner]
+magicEnabled = true
+fastReruns = true
+
+[client]
+showErrorDetails = true
+.toolbarMode = "minimal"

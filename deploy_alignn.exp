@@ -1,0 +1,107 @@
+#!/usr/bin/expect -f
+# ALIGNN Web 服务自动部署脚本（使用 expect）
+
+set timeout 60
+set REMOTE_HOST "106.54.22.65"
+set REMOTE_USER "root"
+set REMOTE_PORT "22"
+set REMOTE_PROJECT_DIR "/root/alignn_service"
+set LOCAL_PROJECT_DIR "/Users/mxye/Myprojects/alignn/alignn_service"
+
+puts "=========================================="
+puts "ALIGNN Web 服务部署脚本"
+puts "=========================================="
+
+# 读取密码
+stty -echo
+send_user "请输入远程服务器密码: "
+expect_user -re "(.*)\n"
+set REMOTE_PASSWORD $expect_out(1,string)
+stty echo
+puts ""
+
+# 测试 SSH 连接
+puts "\[1/4\] 测试 SSH 连接..."
+set ssh_status [catch {spawn ssh -o StrictHostKeyChecking=no -p $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST "echo '连接成功'"} ssh_pid]
+if {$ssh_status != 0} {
+    expect {
+        "password:" {
+            send "$REMOTE_PASSWORD\r"
+            expect {
+                "Permission denied" {
+                    puts "❌ 密码错误，连接失败"
+                    exit 1
+                }
+                "连接成功" {
+                    puts "  ✅ SSH 连接成功"
+                }
+                timeout {
+                    puts "❌ 连接超时"
+                    exit 1
+                }
+            }
+        }
+        timeout {
+            puts "❌ 连接超时"
+            exit 1
+        }
+    }
+}
+catch {expect eof}
+wait
+
+# 上传文件
+puts "\[2/4\] 同步文件到远程服务器..."
+puts "  上传: ui/app.py"
+set scp_status [catch {spawn scp -P $REMOTE_PORT "$LOCAL_PROJECT_DIR/ui/app.py" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PROJECT_DIR/ui/app.py"} scp_pid]
+expect {
+    "password:" {
+        send "$REMOTE_PASSWORD\r"
+    }
+    timeout {
+        puts "❌ SCP 连接超时"
+        exit 1
+    }
+}
+expect eof
+set scp_result [wait]
+if {[lindex $scp_result 3] != 0} {
+    puts "  ❌ 文件上传失败"
+    exit 1
+}
+puts "  ✅ 文件上传成功"
+
+# 重启 Streamlit 服务
+puts "\[3/4\] 重启 Streamlit 服务..."
+spawn ssh -o StrictHostKeyChecking=no -p $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST "cd /root/alignn_service && pkill -f 'streamlit run' 2>/dev/null; sleep 1; nohup streamlit run ui/app.py --server.port 8501 --server.address 0.0.0.0 --server.headless true > streamlit.log 2>&1 & sleep 2; pgrep -f 'streamlit run' | head -1 || echo 'FAILED'"
+expect {
+    "password:" {
+        send "$REMOTE_PASSWORD\r"
+    }
+    timeout {
+        puts "❌ SSH 连接超时"
+        exit 1
+    }
+}
+expect eof
+wait
+puts "  ✅ 服务已重启"
+
+# 验证部署
+puts "\[4/4\] 验证部署..."
+sleep 3
+spawn ssh -o StrictHostKeyChecking=no -p $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST "pgrep -f 'streamlit run' && echo 'RUNNING' || echo 'STOPPED'"
+expect {
+    "password:" {
+        send "$REMOTE_PASSWORD\r"
+    }
+}
+expect eof
+wait
+
+puts ""
+puts "=========================================="
+puts "✅ 部署完成！"
+puts "=========================================="
+puts "服务地址: http://106.54.22.65:8501"
+puts ""

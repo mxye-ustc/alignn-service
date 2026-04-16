@@ -1,0 +1,4 @@
+filename,jv_bandgap,mp_bandgap,jv_ehull
+LFP_Fe=Cu_2x2x2.poscar,0.0551,1.7774,2.7108
+LFP_Fe=Mn_2x2x2.poscar,0.0648,1.8633,2.7412
+LFP_pure_2x2x2.poscar,0.0577,3.6937,2.6381

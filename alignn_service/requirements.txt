@@ -1,0 +1,49 @@
+# ALIGNN 预测服务依赖
+# Python >= 3.10
+
+# 核心深度学习框架
+torch>=2.2.0
+dgl>=1.1.0
+
+# ALIGNN 和相关
+alignn>=1.0.0
+jarvis-tools>=2024.3.24
+pymatgen>=2024.1.1
+ase>=3.22.1
+
+# Web 框架
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+
+# 异步任务队列
+celery>=5.3.0
+redis>=5.0.0
+
+# Web UI
+streamlit>=1.30.0
+requests>=2.31.0
+
+# 数据处理
+numpy>=1.23.0
+pandas>=2.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# 可选依赖
+httpx>=0.26.0  # 异步 HTTP 客户端
+python-jose[cryptography]>=3.3.0  # JWT 认证
+passlib[bcrypt]>=1.7.4  # 密码加密
+python-dotenv>=1.0.0  # 环境变量
+python-magic>=0.4.27  # 文件类型检测
+
+# Excel 导出
+openpyxl>=3.1.0
+
+# 开发工具
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+black>=24.0.0
+isort>=5.13.0
+ruff>=0.2.0

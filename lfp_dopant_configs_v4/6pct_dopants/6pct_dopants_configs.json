@@ -1,0 +1,272 @@
+[
+  {
+    "config_id": "LFP_Fe=Sc_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Sc",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Sc1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Sc_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Ti1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Ti_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=V_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "V",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16V1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=V_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Cr_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Cr",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Cr1Fe15Li16O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Cr_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Mn_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Mn",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16Mn1O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Mn_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Co_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Co",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Co1Fe15Li16O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Co_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ni_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ni",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16Ni1O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Ni_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Cu_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Cu",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Cu1Fe15Li16O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Cu_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Zn_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Zn",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Zn1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Zn_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Y_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Y",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Y1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Y_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Zr_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Zr",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Zr1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Zr_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Nb_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Nb",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16Nb1O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Nb_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Mo_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Mo",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16Mo1O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Mo_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ru_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ru",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Ru1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Ru_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Rh_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Rh",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Rh1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Rh_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Pd_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Pd",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Fe15Li16O64P16Pd1",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Pd_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ag_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ag",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Ag1Fe15Li16O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Ag_6pct_n1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Cd_6pct_n1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Cd",
+    "n_dopant_atoms": 1,
+    "concentration_pct": 6.25,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "formula": "Cd1Fe15Li16O64P16",
+    "n_atoms": 112,
+    "poscar_path": "poscar_files/LFP_Fe=Cd_6pct_n1_2x2x1.poscar"
+  }
+]

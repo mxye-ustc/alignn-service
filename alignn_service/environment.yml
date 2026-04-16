@@ -1,0 +1,77 @@
+# ALIGNN 预测服务 Conda 环境配置
+# 适用于腾讯云 4核CPU + 4GB内存 无GPU环境
+
+name: alignn-service
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.10.13
+  - pip
+
+  # 基础科学计算
+  - numpy>=1.23.0
+  - scipy>=1.11.0
+  - pandas>=2.0.0
+  - scikit-learn>=1.4.0
+
+  # 深度学习（CPU 版本）
+  - pytorch>=2.2.0
+  - torchvision>=0.17.0
+  - cpuonly
+
+  # 图神经网络
+  - dgl>=1.1.0
+
+  # 编译器
+  - gcc_linux-64
+  - gxx_linux-64
+
+  # HDF5 (DGL 需要)
+  - h5py>=3.10.0
+
+  # 其他系统依赖
+  - spglib>=2.3.0
+  - sympy>=1.12
+
+  - pip:
+      # ALIGNN
+      - alignn>=1.0.0
+      - jarvis-tools>=2024.3.24
+
+      # 材料科学
+      - pymatgen>=2024.1.1
+      - ase>=3.22.1
+      - custodian>=2024.1.1
+
+      # Web 框架
+      - fastapi>=0.109.0
+      - uvicorn[standard]>=0.27.0
+      - python-multipart>=0.0.6
+
+      # 异步任务
+      - celery>=5.3.0
+      - redis>=5.0.0
+
+      # Web UI
+      - streamlit>=1.30.0
+      - requests>=2.31.0
+
+      # 数据验证
+      - pydantic>=2.0.0
+      - pydantic-settings>=2.0.0
+
+      # 认证
+      - python-jose[cryptography]>=3.3.0
+      - passlib[bcrypt]>=1.7.4
+
+      # 工具
+      - python-dotenv>=1.0.0
+      - httpx>=0.26.0
+
+      # 开发工具
+      - pytest>=8.0.0
+      - pytest-asyncio>=0.23.0
+      - black>=24.0.0
+      - ruff>=0.2.0

@@ -1,0 +1,4 @@
+name,filename,jv_form_energy,mp_form_energy
+纯LFP,LFP_pure_2x2x2.poscar,-2.0698,-2.5322
+Fe7/8Mg1/8,LFP_Fe7_8Mg1_8_2x2x2.poscar,-2.1473,-2.5852
+Fe7/8Cu1/8,LFP_Fe7_8Cu1_8_2x2x2.poscar,-2.0578,-2.4884

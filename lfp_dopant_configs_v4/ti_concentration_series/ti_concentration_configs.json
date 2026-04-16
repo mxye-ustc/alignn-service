@@ -1,0 +1,1142 @@
+[
+  {
+    "config_id": "LFP_Fe=Ti_conc01_n1_c1_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 1,
+    "actual_concentration_pct": 1.56,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 1,
+    "n_atoms": 448,
+    "formula": "Fe63Li64O256P64Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc01_n1_c1_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc01_n1_c2_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 1,
+    "actual_concentration_pct": 1.56,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 2,
+    "n_atoms": 448,
+    "formula": "Fe63Li64O256P64Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc01_n1_c2_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc01_n1_c3_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 1,
+    "actual_concentration_pct": 1.56,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 3,
+    "n_atoms": 448,
+    "formula": "Fe63Li64O256P64Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc01_n1_c3_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc02_n1_c1_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 2,
+    "actual_concentration_pct": 1.56,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 1,
+    "n_atoms": 448,
+    "formula": "Fe63Li64O256P64Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc02_n1_c1_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc02_n1_c2_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 2,
+    "actual_concentration_pct": 1.56,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 2,
+    "n_atoms": 448,
+    "formula": "Fe63Li64O256P64Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc02_n1_c2_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc02_n1_c3_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 2,
+    "actual_concentration_pct": 1.56,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 3,
+    "n_atoms": 448,
+    "formula": "Fe63Li64O256P64Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc02_n1_c3_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc03_n2_c1_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 3,
+    "actual_concentration_pct": 3.12,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 1,
+    "n_atoms": 448,
+    "formula": "Fe62Li64O256P64Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc03_n2_c1_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc03_n2_c2_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 3,
+    "actual_concentration_pct": 3.12,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 2,
+    "n_atoms": 448,
+    "formula": "Fe62Li64O256P64Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc03_n2_c2_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc03_n2_c3_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 3,
+    "actual_concentration_pct": 3.12,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 3,
+    "n_atoms": 448,
+    "formula": "Fe62Li64O256P64Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc03_n2_c3_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc04_n3_c1_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 4,
+    "actual_concentration_pct": 4.69,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 1,
+    "n_atoms": 448,
+    "formula": "Fe61Li64O256P64Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc04_n3_c1_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc04_n3_c2_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 4,
+    "actual_concentration_pct": 4.69,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 2,
+    "n_atoms": 448,
+    "formula": "Fe61Li64O256P64Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc04_n3_c2_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc04_n3_c3_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 4,
+    "actual_concentration_pct": 4.69,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 3,
+    "n_atoms": 448,
+    "formula": "Fe61Li64O256P64Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc04_n3_c3_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc05_n3_c1_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 5,
+    "actual_concentration_pct": 4.69,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 1,
+    "n_atoms": 448,
+    "formula": "Fe61Li64O256P64Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc05_n3_c1_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc05_n3_c2_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 5,
+    "actual_concentration_pct": 4.69,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 2,
+    "n_atoms": 448,
+    "formula": "Fe61Li64O256P64Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc05_n3_c2_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc05_n3_c3_4x2x2",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 5,
+    "actual_concentration_pct": 4.69,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 64,
+    "supercell": [
+      4,
+      2,
+      2
+    ],
+    "supercell_name": "4x2x2",
+    "config_idx": 3,
+    "n_atoms": 448,
+    "formula": "Fe61Li64O256P64Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc05_n3_c3_4x2x2.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc06_n1_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 6,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc06_n1_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc06_n1_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 6,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc06_n1_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc06_n1_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 6,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc06_n1_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc07_n1_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 7,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc07_n1_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc07_n1_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 7,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc07_n1_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc07_n1_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 7,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc07_n1_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc08_n1_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 8,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc08_n1_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc08_n1_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 8,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc08_n1_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc08_n1_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 8,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc08_n1_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc09_n1_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 9,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc09_n1_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc09_n1_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 9,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc09_n1_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc09_n1_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 9,
+    "actual_concentration_pct": 6.25,
+    "n_dopant_atoms": 1,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe15Li16O64P16Ti1",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc09_n1_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc10_n2_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 10,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc10_n2_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc10_n2_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 10,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc10_n2_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc10_n2_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 10,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc10_n2_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc11_n2_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 11,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc11_n2_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc11_n2_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 11,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc11_n2_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc11_n2_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 11,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc11_n2_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc12_n2_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 12,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc12_n2_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc12_n2_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 12,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc12_n2_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc12_n2_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 12,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc12_n2_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc13_n2_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 13,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc13_n2_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc13_n2_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 13,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc13_n2_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc13_n2_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 13,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc13_n2_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc14_n2_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 14,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc14_n2_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc14_n2_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 14,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc14_n2_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc14_n2_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 14,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc14_n2_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc15_n2_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 15,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc15_n2_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc15_n2_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 15,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc15_n2_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc15_n2_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 15,
+    "actual_concentration_pct": 12.5,
+    "n_dopant_atoms": 2,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe14Li16O64P16Ti2",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc15_n2_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc16_n3_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 16,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc16_n3_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc16_n3_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 16,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc16_n3_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc16_n3_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 16,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc16_n3_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc17_n3_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 17,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc17_n3_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc17_n3_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 17,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc17_n3_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc17_n3_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 17,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc17_n3_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc18_n3_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 18,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc18_n3_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc18_n3_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 18,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc18_n3_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc18_n3_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 18,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc18_n3_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc19_n3_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 19,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc19_n3_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc19_n3_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 19,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc19_n3_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc19_n3_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 19,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc19_n3_c3_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc20_n3_c1_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 20,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 1,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc20_n3_c1_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc20_n3_c2_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 20,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 2,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc20_n3_c2_2x2x1.poscar"
+  },
+  {
+    "config_id": "LFP_Fe=Ti_conc20_n3_c3_2x2x1",
+    "doping_site": "Fe",
+    "dopant": "Ti",
+    "target_concentration_pct": 20,
+    "actual_concentration_pct": 18.75,
+    "n_dopant_atoms": 3,
+    "fe_sites_total": 16,
+    "supercell": [
+      2,
+      2,
+      1
+    ],
+    "supercell_name": "2x2x1",
+    "config_idx": 3,
+    "n_atoms": 112,
+    "formula": "Fe13Li16O64P16Ti3",
+    "poscar_path": "poscar_files/LFP_Fe=Ti_conc20_n3_c3_2x2x1.poscar"
+  }
+]

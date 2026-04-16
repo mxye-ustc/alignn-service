@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIGNN Designer</title>
+    <style>
+        :root {
+            --bg-primary: #000;
+            --bg-secondary: #1c1c1e;
+            --bg-tertiary: #2c2c2e;
+            --accent: #0a84ff;
+            --accent-gradient: linear-gradient(135deg, #0a84ff 0%, #5e5ce6 100%);
+            --text-primary: #fff;
+            --text-secondary: #8e8e93;
+            --text-tertiary: #636366;
+            --border: rgba(255,255,255,0.1);
+            --card-bg: rgba(44,44,46,0.8);
+            --success: #30d158;
+            --warning: #ff9f0a;
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 24px;
+            --shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 动态背景 */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(10,132,255,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(94,92,230,0.15) 0%, transparent 50%),
+                var(--bg-primary);
+            z-index: -1;
+        }
+
+        /* 容器 */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
+        }
+
+        /* 工作区 */
+        .workspace {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 24px;
+        }
+
+        /* 左侧主区域 */
+        .main-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            padding: 32px;
+            min-height: 600px;
+        }
+
+        /* 右侧面板 */
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            padding: 24px;
+        }
+
+        .panel-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .panel-title .icon {
+            font-size: 20px;
+        }
+
+        /* 上传区域 */
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius-lg);
+            padding: 80px 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: var(--accent);
+            background: rgba(10,132,255,0.05);
+        }
+
+        .upload-zone.dragover {
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            transition: all 0.3s;
+        }
+
+        .upload-zone:hover .upload-icon {
+            background: var(--accent-gradient);
+            transform: scale(1.1);
+        }
+
+        .upload-text h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .upload-text p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .upload-formats {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .format-tag {
+            padding: 4px 12px;
+            background: var(--bg-tertiary);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        /* 上传成功状态 */
+        .upload-success {
+            display: none;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .upload-success.show {
+            display: block;
+        }
+
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(48,209,88,0.15);
+            border: 1px solid rgba(48,209,88,0.3);
+            border-radius: var(--radius-sm);
+            color: var(--success);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .file-name {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .reset-btn {
+            margin-top: 16px;
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .reset-btn:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        /* 结构预览 */
+        .structure-preview {
+            display: none;
+        }
+
+        .structure-preview.show {
+            display: block;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .preview-header h3 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .formula-badge {
+            padding: 8px 20px;
+            background: var(--accent-gradient);
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .info-item {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .info-item.full-width {
+            grid-column: span 2;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .info-value {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .info-value.small {
+            font-size: 18px;
+        }
+
+        .atom-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .atom-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .atom-chip .element {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .atom-chip .count {
+            color: var(--text-secondary);
+        }
+
+        /* 掺杂设计区 */
+        .doping-section {
+            display: none;
+        }
+
+        .doping-section.show {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 24px 0 16px;
+        }
+
+        /* 位点选择 */
+        .site-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .site-btn {
+            padding: 14px 24px;
+            background: var(--bg-tertiary);
+            border: 2px solid transparent;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .site-btn:hover {
+            background: var(--bg-secondary);
+        }
+
+        .site-btn.selected {
+            border-color: var(--accent);
+            background: rgba(10,132,255,0.15);
+        }
+
+        .site-btn .element {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* 周期表 */
+        .periodic-table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+        }
+
+        .periodic-table {
+            display: grid;
+            grid-template-columns: repeat(18, minmax(36px, 1fr));
+            gap: 3px;
+            min-width: 680px;
+        }
+
+        .pt-element {
+            aspect-ratio: 1;
+            min-width: 36px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+        }
+
+        .pt-element:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(10,132,255,0.4);
+        }
+
+        .pt-element.selected {
+            background: var(--accent);
+            transform: scale(1.15);
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(10,132,255,0.5);
+            border-color: var(--accent);
+        }
+
+        .pt-element .symbol {
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .pt-element .number {
+            font-size: 8px;
+            color: var(--text-tertiary);
+        }
+
+        .pt-element.selected .number {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .pt-empty {
+            min-height: 36px;
+            background: transparent;
+            border: none;
+        }
+
+        .pt-highlight {
+            background: rgba(10,132,255,0.25) !important;
+            border-color: rgba(10,132,255,0.5) !important;
+        }
+
+        .pt-highlight.selected {
+            background: var(--accent) !important;
+        }
+
+        .pt-legend {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .pt-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pt-legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+        }
+
+        /* 浓度滑块 */
+        .concentration-control {
+            margin: 24px 0;
+        }
+
+        .concentration-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .concentration-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .concentration-value span {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .slider-wrapper {
+            position: relative;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            margin: 0 4px;
+        }
+
+        .slider-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: var(--accent-gradient);
+            border-radius: 4px;
+            transition: width 0.2s;
+        }
+
+        input[type="range"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+
+        /* 生成按钮 */
+        .generate-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent-gradient);
+            border: none;
+            border-radius: var(--radius-md);
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(10,132,255,0.4);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        .generate-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* 结果展示 */
+        .results-section {
+            display: none;
+            margin-top: 32px;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .result-card {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-info h4 {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .result-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .result-badge {
+            padding: 8px 16px;
+            background: rgba(10,132,255,0.2);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* 预测按钮 */
+        .predict-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #30d158 0%, #34c759 100%);
+            border: none;
+            border-radius: var(--radius-md);
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 16px;
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(48,209,88,0.4);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            padding: 16px 32px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* 选中元素提示 */
+        .selected-element-badge {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(10,132,255,0.15);
+            border: 1px solid rgba(10,132,255,0.3);
+            border-radius: var(--radius-sm);
+            margin-top: 16px;
+        }
+
+        .selected-element-badge.show {
+            display: flex;
+        }
+
+        .selected-element-badge .symbol {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* 快捷元素 */
+        .quick-elements {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-primary);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .quick-btn.selected {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .workspace {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-item.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <div class="logo">
+                <div class="logo-icon">⚛️</div>
+                <div class="logo-text">
+                    <h1>ALIGNN Designer</h1>
+                    <span>AI-Driven Material Design</span>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-btn" onclick="resetAll()">重置</button>
+                <button class="nav-btn" onclick="window.location.href='/'">首页</button>
+            </div>
+        </nav>
+
+        <!-- 工作区 -->
+        <div class="workspace">
+            <!-- 左侧主面板 -->
+            <div class="main-panel">
+                <!-- 上传区域 -->
+                <div class="upload-zone" id="upload-zone">
+                    <div class="upload-icon">📂</div>
+                    <div class="upload-text">
+                        <h3>上传晶体结构文件</h3>
+                        <p>拖拽文件到此处，或点击选择文件</p>
+                    </div>
+                    <div class="upload-formats">
+                        <span class="format-tag">POSCAR</span>
+                        <span class="format-tag">VASP</span>
+                        <span class="format-tag">CIF</span>
+                    </div>
+                    <input type="file" id="file-input" accept=".poscar,.vasp,.cif,.txt">
+                </div>
+
+                <!-- 上传成功 -->
+                <div class="upload-success" id="upload-success">
+                    <div class="success-badge">
+                        <span>✓</span>
+                        文件上传成功
+                    </div>
+                    <p class="file-name" id="uploaded-filename">-</p>
+                    <button class="reset-btn" onclick="resetUpload()">重新上传</button>
+                </div>
+
+                <!-- 结构预览 -->
+                <div class="structure-preview" id="structure-preview">
+                    <div class="preview-header">
+                        <h3>结构预览</h3>
+                        <span class="formula-badge" id="formula-badge">-</span>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">总原子数</div>
+                            <div class="info-value" id="total-atoms">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">晶格体积</div>
+                            <div class="info-value small" id="lattice-volume">- Å³</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">元素组成</div>
+                            <div class="atom-list" id="atom-list"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">可掺杂位点</div>
+                            <div class="atom-list" id="dopant-sites"></div>
+                        </div>
+                    </div>
+
+                    <!-- 掺杂设计 -->
+                    <div class="doping-section" id="doping-section">
+                        <h3 class="section-title">⚗️ 选择掺杂位点</h3>
+                        <div class="site-selector" id="site-selector"></div>
+
+                        <h3 class="section-title">🎯 选择掺杂元素</h3>
+                        <div class="periodic-table-wrapper">
+                            <div class="periodic-table" id="periodic-table"></div>
+                            <div class="pt-legend">
+                                <div class="pt-legend-item">
+                                    <div class="pt-legend-dot" style="background: rgba(10,132,255,0.25);"></div>
+                                    <span>过渡金属</span>
+                                </div>
+                                <div class="pt-legend-item">
+                                    <div class="pt-legend-dot" style="background: var(--accent);"></div>
+                                    <span>已选择</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="selected-element-badge" id="selected-badge">
+                            <span class="symbol" id="selected-symbol">-</span>
+                            <span>已选择掺杂元素</span>
+                        </div>
+
+                        <div class="quick-elements">
+                            <button class="quick-btn" onclick="selectQuickElement('Mn')">Mn</button>
+                            <button class="quick-btn" onclick="selectQuickElement('Ni')">Ni</button>
+                            <button class="quick-btn" onclick="selectQuickElement('Co')">Co</button>
+                            <button class="quick-btn" onclick="selectQuickElement('V')">V</button>
+                            <button class="quick-btn" onclick="selectQuickElement('Ti')">Ti</button>
+                        </div>
+
+                        <div class="concentration-control">
+                            <div class="concentration-header">
+                                <span>掺杂浓度</span>
+                                <div class="concentration-value"><span id="conc-value">10</span><span>%</span></div>
+                            </div>
+                            <div class="slider-wrapper">
+                                <div class="slider-fill" id="slider-fill" style="width: 10%;"></div>
+                                <input type="range" id="conc-slider" min="1" max="100" value="10">
+                            </div>
+                            <div class="slider-labels">
+                                <span>1%</span>
+                                <span>25%</span>
+                                <span>50%</span>
+                                <span>75%</span>
+                                <span>100%</span>
+                            </div>
+                        </div>
+
+                        <button class="generate-btn" id="generate-btn" onclick="generateStructures()">
+                            <span>✨</span>
+                            <span>生成掺杂结构</span>
+                        </button>
+
+                        <!-- 结果展示 -->
+                        <div class="results-section" id="results-section">
+                            <h3 class="section-title">📋 生成的结构</h3>
+                            <div id="result-list"></div>
+                            
+                            <button class="predict-btn" id="predict-btn" onclick="runPrediction()">
+                                🚀 开始预测
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧面板 -->
+            <div class="side-panel">
+                <div class="panel-card">
+                    <h3 class="panel-title"><span class="icon">💡</span> 使用提示</h3>
+                    <ol style="color: var(--text-secondary); font-size: 14px; line-height: 1.8; padding-left: 16px;">
+                        <li>上传晶体结构文件 (POSCAR/VASP)</li>
+                        <li>系统自动识别可掺杂位点</li>
+                        <li>选择要替换的位点和掺杂元素</li>
+                        <li>设置掺杂浓度</li>
+                        <li>生成结构并提交预测</li>
+                    </ol>
+                </div>
+
+                <div class="panel-card">
+                    <h3 class="panel-title"><span class="icon">🧪</span> 支持的掺杂类型</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">
+                        <span class="format-tag" style="background: rgba(10,132,255,0.2);">Fe → Mn</span>
+                        <span class="format-tag" style="background: rgba(10,132,255,0.2);">Fe → Ni</span>
+                        <span class="format-tag" style="background: rgba(10,132,255,0.2);">Fe → Co</span>
+                        <span class="format-tag" style="background: rgba(10,132,255,0.2);">Fe → V</span>
+                        <span class="format-tag" style="background: rgba(10,132,255,0.2);">Mn → Fe</span>
+                        <span class="format-tag" style="background: rgba(10,132,255,0.2);">Ni → Co</span>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <h3 class="panel-title"><span class="icon">⚙️</span> 系统状态</h3>
+                    <div style="font-size: 14px; color: var(--text-secondary);">
+                        <p style="margin-bottom: 8px;">模型状态: <span id="model-status" style="color: var(--success);">● 已加载</span></p>
+                        <p>可用内存: <span id="memory-info">-</span> GB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span id="toast-message">提示信息</span>
+    </div>
+
+    <script>
+        // 状态变量
+        let currentStructureId = null;
+        let currentStructure = null;
+        let selectedSite = null;
+        let selectedElement = null;
+        let currentDesigns = null;
+
+        // DOM 元素
+        const uploadZone = document.getElementById('upload-zone');
+        const uploadSuccess = document.getElementById('upload-success');
+        const structurePreview = document.getElementById('structure-preview');
+        const fileInput = document.getElementById('file-input');
+        const concSlider = document.getElementById('conc-slider');
+        const toast = document.getElementById('toast');
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            initPeriodicTable();
+            loadSystemInfo();
+            setupEventListeners();
+        });
+
+        // 设置事件监听
+        function setupEventListeners() {
+            // 文件上传
+            uploadZone.addEventListener('click', () => fileInput.click());
+            uploadZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadZone.classList.add('dragover');
+            });
+            uploadZone.addEventListener('dragleave', () => {
+                uploadZone.classList.remove('dragover');
+            });
+            uploadZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadZone.classList.remove('dragover');
+                if (e.dataTransfer.files.length) {
+                    uploadFile(e.dataTransfer.files[0]);
+                }
+            });
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length) {
+                    uploadFile(e.target.files[0]);
+                }
+            });
+
+            // 浓度滑块
+            concSlider.addEventListener('input', (e) => {
+                const value = e.target.value;
+                document.getElementById('conc-value').textContent = value;
+                document.getElementById('slider-fill').style.width = value + '%';
+            });
+        }
+
+        // 加载系统信息
+        async function loadSystemInfo() {
+            try {
+                const res = await fetch('/api/info');
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('memory-info').textContent = 
+                        data.info.memory_available.toFixed(1);
+                    if (!data.info.model_loaded) {
+                        document.getElementById('model-status').innerHTML = 
+                            '<span style="color: var(--warning);">● 未加载</span>';
+                    }
+                }
+            } catch (e) {
+                console.log('获取系统信息失败');
+            }
+        }
+
+        // 初始化周期表
+        function initPeriodicTable() {
+            const table = document.getElementById('periodic-table');
+            const elements = [
+                // 第1行
+                {e:'H',n:1,p:1},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{e:'He',n:2,p:18},
+                // 第2行
+                {e:'Li',n:3,p:1},{e:'Be',n:4,p:2},{},{},{},{},{},{},{},{},{},{e:'B',n:5,p:13},{e:'C',n:6,p:14},{e:'N',n:7,p:15},{e:'O',n:8,p:16},{e:'F',n:9,p:17},{e:'Ne',n:10,p:18},
+                // 第3行
+                {e:'Na',n:11,p:1},{e:'Mg',n:12,p:2},{},{},{},{},{},{},{},{},{},{e:'Al',n:13,p:13},{e:'Si',n:14,p:14},{e:'P',n:15,p:15},{e:'S',n:16,p:16},{e:'Cl',n:17,p:17},{e:'Ar',n:18,p:18},
+                // 第4行
+                {e:'K',n:19,p:1},{e:'Ca',n:20,p:2},{e:'Sc',n:21,p:3},{e:'Ti',n:22,p:4},{e:'V',n:23,p:5},{e:'Cr',n:24,p:6},{e:'Mn',n:25,p:7},{e:'Fe',n:26,p:8,h:true},{e:'Co',n:27,p:9},{e:'Ni',n:28,p:10},{e:'Cu',n:29,p:11},{e:'Zn',n:30,p:12},{e:'Ga',n:31,p:13},{e:'Ge',n:32,p:14},{e:'As',n:33,p:15},{e:'Se',n:34,p:16},{e:'Br',n:35,p:17},{e:'Kr',n:36,p:18},
+                // 第5行
+                {e:'Rb',n:37,p:1},{e:'Sr',n:38,p:2},{e:'Y',n:39,p:3},{e:'Zr',n:40,p:4},{e:'Nb',n:41,p:5},{e:'Mo',n:42,p:6},{e:'Tc',n:43,p:7},{e:'Ru',n:44,p:8},{e:'Rh',n:45,p:9},{e:'Pd',n:46,p:10},{e:'Ag',n:47,p:11},{e:'Cd',n:48,p:12},{e:'In',n:49,p:13},{e:'Sn',n:50,p:14},{e:'Sb',n:51,p:15},{e:'Te',n:52,p:16},{e:'I',n:53,p:17},{e:'Xe',n:54,p:18},
+                // 第6行
+                {e:'Cs',n:55,p:1},{e:'Ba',n:56,p:2},{},{e:'Hf',n:72,p:4},{e:'Ta',n:73,p:5},{e:'W',n:74,p:6},{e:'Re',n:75,p:7},{e:'Os',n:76,p:8},{e:'Ir',n:77,p:9},{e:'Pt',n:78,p:10},{e:'Au',n:79,p:11},{e:'Hg',n:80,p:12},{e:'Tl',n:81,p:13},{e:'Pb',n:82,p:14},{e:'Bi',n:83,p:15},{e:'Po',n:84,p:16},{e:'At',n:85,p:17},{e:'Rn',n:86,p:18},
+                // 第7行
+                {e:'Fr',n:87,p:1},{e:'Ra',n:88,p:2},{},{e:'Rf',n:104,p:4},{e:'Db',n:105,p:5},{e:'Sg',n:106,p:6},{e:'Bh',n:107,p:7},{e:'Hs',n:108,p:8},{e:'Mt',n:109,p:9},{e:'Ds',n:110,p:10},{e:'Rg',n:111,p:11},{e:'Cn',n:112,p:12},{e:'Nh',n:113,p:13},{e:'Fl',n:114,p:14},{e:'Mc',n:115,p:15},{e:'Lv',n:116,p:16},{e:'Ts',n:117,p:17},{e:'Og',n:118,p:18}
+            ];
+
+            table.innerHTML = '';
+            elements.forEach(el => {
+                const div = document.createElement('div');
+                if (el.e) {
+                    div.className = 'pt-element' + (el.h ? ' pt-highlight' : '');
+                    div.dataset.element = el.e;
+                    div.innerHTML = `<span class="symbol">${el.e}</span><span class="number">${el.n}</span>`;
+                    div.style.gridColumn = el.p;
+                    div.addEventListener('click', () => selectElement(el.e));
+                } else {
+                    div.className = 'pt-empty';
+                    div.style.gridColumn = el.p;
+                }
+                table.appendChild(div);
+            });
+        }
+
+        // 选择元素
+        function selectElement(element) {
+            selectedElement = element;
+            document.querySelectorAll('.pt-element').forEach(el => {
+                el.classList.remove('selected');
+            });
+            document.querySelector(`.pt-element[data-element="${element}"]`)?.classList.add('selected');
+            
+            // 更新选中提示
+            document.getElementById('selected-symbol').textContent = element;
+            document.getElementById('selected-badge').classList.add('show');
+            
+            // 更新快捷按钮
+            document.querySelectorAll('.quick-btn').forEach(btn => {
+                btn.classList.toggle('selected', btn.textContent === element);
+            });
+        }
+
+        // 快捷选择元素
+        function selectQuickElement(element) {
+            selectElement(element);
+        }
+
+        // 上传文件
+        async function uploadFile(file) {
+            showToast('正在上传...');
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const res = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    currentStructureId = data.structure_id;
+                    currentStructure = data.structure;
+                    
+                    // 更新UI
+                    uploadZone.style.display = 'none';
+                    uploadSuccess.classList.add('show');
+                    structurePreview.classList.add('show');
+                    document.getElementById('doping-section').classList.add('show');
+                    
+                    document.getElementById('uploaded-filename').textContent = file.name;
+                    document.getElementById('formula-badge').textContent = currentStructure.formula;
+                    document.getElementById('total-atoms').textContent = currentStructure.num_atoms;
+                    
+                    // 计算晶格体积
+                    const lattice = currentStructure.lattice;
+                    if (lattice && lattice.length === 3) {
+                        const vol = Math.abs(
+                            lattice[0][0] * (lattice[1][1] * lattice[2][2] - lattice[1][2] * lattice[2][1]) -
+                            lattice[0][1] * (lattice[1][0] * lattice[2][2] - lattice[1][2] * lattice[2][0]) +
+                            lattice[0][2] * (lattice[1][0] * lattice[2][1] - lattice[1][1] * lattice[2][0])
+                        );
+                        document.getElementById('lattice-volume').textContent = vol.toFixed(2) + ' Å³';
+                    }
+                    
+                    // 元素组成
+                    const atomList = document.getElementById('atom-list');
+                    atomList.innerHTML = Object.entries(currentStructure.elements)
+                        .map(([elem, count]) => `
+                            <div class="atom-chip">
+                                <span class="element">${elem}</span>
+                                <span class="count">${count}</span>
+                            </div>
+                        `).join('');
+                    
+                    // 可掺杂位点
+                    const dopantSites = document.getElementById('dopant-sites');
+                    const sites = data.available_sites || [];
+                    dopantSites.innerHTML = sites.map(site => `
+                        <div class="atom-chip" style="cursor: pointer;">
+                            <span class="element">${site.element}</span>
+                            <span class="count">${site.count}个</span>
+                        </div>
+                    `).join('');
+                    
+                    // 初始化位点选择
+                    initSiteSelector(sites);
+                    
+                    showToast('上传成功');
+                } else {
+                    showToast('上传失败: ' + data.error);
+                }
+            } catch (e) {
+                showToast('上传失败');
+            }
+        }
+
+        // 初始化位点选择器
+        function initSiteSelector(sites) {
+            const selector = document.getElementById('site-selector');
+            selector.innerHTML = sites.map(site => `
+                <button class="site-btn" data-site="${site.element}">
+                    <span class="element">${site.element}</span>
+                    <span>${site.count}个位点</span>
+                </button>
+            `).join('');
+
+            selector.querySelectorAll('.site-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    selector.querySelectorAll('.site-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    selectedSite = btn.dataset.site;
+                });
+            });
+
+            // 默认选择第一个
+            if (sites.length > 0) {
+                selectedSite = sites[0].element;
+                selector.querySelector('.site-btn').classList.add('selected');
+            }
+        }
+
+        // 生成结构
+        async function generateStructures() {
+            if (!currentStructureId || !selectedSite || !selectedElement) {
+                showToast('请选择掺杂位点和元素');
+                return;
+            }
+
+            const btn = document.getElementById('generate-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span>生成中...</span>';
+            showToast('正在生成掺杂结构...');
+
+            try {
+                const res = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        structure_id: currentStructureId,
+                        dopant_site: selectedSite,
+                        dopant_element: selectedElement,
+                        concentration: parseInt(concSlider.value),
+                        mode: 'auto',
+                        num_configurations: 1
+                    })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    currentDesigns = data;
+                    displayResults(data.designs);
+                    showToast('生成成功');
+                } else {
+                    showToast('生成失败: ' + data.error);
+                }
+            } catch (e) {
+                showToast('生成失败');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>✨</span><span>生成掺杂结构</span>';
+            }
+        }
+
+        // 显示结果
+        function displayResults(designs) {
+            const section = document.getElementById('results-section');
+            const list = document.getElementById('result-list');
+            
+            section.classList.add('show');
+            list.innerHTML = designs.map(d => `
+                <div class="result-card">
+                    <div class="result-info">
+                        <h4>${d.filename}</h4>
+                        <p>${d.dopant_info.element} 替换 ${d.dopant_info.num_replaced}/${d.dopant_info.total_sites} ${d.dopant_info.site}</p>
+                    </div>
+                    <span class="result-badge">${d.dopant_info.actual_concentration.toFixed(1)}%</span>
+                </div>
+            `).join('');
+        }
+
+        // 预测
+        async function runPrediction() {
+            if (!currentDesigns) {
+                showToast('请先生成结构');
+                return;
+            }
+            showToast('预测功能开发中...');
+        }
+
+        // 重置上传
+        function resetUpload() {
+            currentStructureId = null;
+            currentStructure = null;
+            currentDesigns = null;
+            uploadZone.style.display = 'block';
+            uploadSuccess.classList.remove('show');
+            structurePreview.classList.remove('show');
+            document.getElementById('doping-section').classList.remove('show');
+            document.getElementById('results-section').classList.remove('show');
+            fileInput.value = '';
+        }
+
+        // 重置全部
+        function resetAll() {
+            resetUpload();
+            selectedSite = null;
+            selectedElement = null;
+            document.querySelectorAll('.pt-element').forEach(el => el.classList.remove('selected'));
+            document.querySelectorAll('.quick-btn').forEach(btn => btn.classList.remove('selected'));
+            document.getElementById('selected-badge').classList.remove('show');
+            concSlider.value = 10;
+            document.getElementById('conc-value').textContent = '10';
+            document.getElementById('slider-fill').style.width = '10%';
+        }
+
+        // Toast
+        function showToast(message) {
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    </script>
+</body>
+</html>
