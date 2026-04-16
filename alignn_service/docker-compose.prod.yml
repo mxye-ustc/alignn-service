@@ -1,0 +1,106 @@
+# ALIGNN 生产环境 Docker Compose 配置
+# 配合 GitHub Actions 自动部署使用
+
+version: "3.8"
+
+services:
+  # ========== API 服务 ==========
+  api:
+    image: ghcr.io/mxye-ustc/alignn-service:latest
+    container_name: alignn-api-prod
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=false
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=sqlite:///./alignn_service.db
+      - MODEL_BASE_DIR=/models
+      - UPLOAD_DIR=/data/uploads
+      - RESULTS_DIR=/data/results
+      - SECRET_KEY=${SECRET_KEY}
+      - MAX_CONCURRENT_PREDICTIONS=1
+    volumes:
+      - ./data/uploads:/data/uploads
+      - ./data/results:/data/results
+      - model_data:/models
+    depends_on:
+      - redis
+    networks:
+      - alignn-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+  # ========== Celery Worker ==========
+  worker:
+    image: ghcr.io/mxye-ustc/alignn-service:latest
+    container_name: alignn-worker-prod
+    restart: always
+    command: celery -A alignn_service.core.tasks celery_app worker --loglevel=info --concurrency=1
+    environment:
+      - DEBUG=false
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=sqlite:///./alignn_service.db
+      - MODEL_BASE_DIR=/models
+      - UPLOAD_DIR=/data/uploads
+      - RESULTS_DIR=/data/results
+    volumes:
+      - ./data/uploads:/data/uploads
+      - ./data/results:/data/results
+      - model_data:/models
+    depends_on:
+      - redis
+    networks:
+      - alignn-network
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+
+  # ========== Redis 缓存 ==========
+  redis:
+    image: redis:7-alpine
+    container_name: alignn-redis-prod
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - alignn-network
+    command: redis-server --maxmemory 512mb --maxmemory-policy allkeys-lru
+
+  # ========== Streamlit Web UI ==========
+  ui:
+    image: ghcr.io/mxye-ustc/alignn-service-ui:latest
+    container_name: alignn-ui-prod
+    restart: always
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=true
+      - API_BASE_URL=http://api:8000
+    depends_on:
+      - api
+    networks:
+      - alignn-network
+    volumes:
+      - ./data/uploads:/data/uploads
+      - ./data/results:/data/results
+
+# ========== 网络 ==========
+networks:
+  alignn-network:
+    driver: bridge
+
+# ========== 存储卷 ==========
+volumes:
+  redis_data:
+  model_data:
